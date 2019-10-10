@@ -1,0 +1,28 @@
+<mvc:View
+	controllerName="task.Task2SAPUI5.controller.Example"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		id="employeeListPage"
+		title="{i18n>EmployeeList}"
+		class="sapUiResponsiveContentPadding">
+		<content>
+		<Button
+			text="{i18n>btnTextNavToMain}" 
+			id="btnNavBackToMain" 
+			activeIcon="sap-icon://navigation-left-arrow" 
+			icon="sap-icon://navigation-left-arrow" 
+			press="navToMain"/>
+			<List id="employeeList" headerText="{i18n>ListOfAllEmployees}" items="{Employee>/}">
+				<items>
+					<StandardListItem
+						title="{Employee>name}"
+						iconDensityAware="false"
+						iconInset="false"
+						type="Navigation"
+						press="onListItemPressed"/>
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>

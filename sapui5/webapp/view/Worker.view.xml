@@ -1,0 +1,52 @@
+<mvc:View
+	controllerName="task.Task2SAPUI5.controller.Worker"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield"
+	xmlns:f="sap.ui.layout.form"
+	busyIndicatorDelay="0">
+	<Page
+		id="workerPage"
+		title="{i18n>Worker.title}"
+		class="sapUiResponsiveContentPadding">
+		<content>
+			<Panel
+				id="employeePanel"
+				width="auto"
+				class="sapUiNoContentPadding">
+				<headerToolbar editTogglable="true">
+					<Toolbar>
+						<Title text="{i18n>WorkerIDColon} {data>id}" level="H2"/>
+						<ToggleButton 
+							text="{i18n>btnTxtEditData}" 
+							id="btnEditData"
+							icon="sap-icon://edit" 
+							press="btnEditData" />
+                    </Toolbar>
+				</headerToolbar>
+				<content>
+					<f:SimpleForm
+						editable="false"
+						layout="ResponsiveGridLayout"
+						labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+						columnsL="1" columnsM="1">
+						<f:content>
+							<Label text="{i18n>labelName}"/>
+							<Input width="100%" id="iname" value="{data>name}" editable="false"/>
+							<Label text="{i18n>labelAge}"/>
+							<Input width="100%" id="iage" value="{data>age}" editable="false"/>
+							<Label text="{i18n>labelCategory}"/>
+							<Input width="100%" id="icategory" value="{data>category}" editable="false"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+                <Button
+						text="{i18n>btnNavToBack}" 
+						id="btnNavBackToTable"
+						icon="sap-icon://navigation-left-arrow" 
+						press="onNavBack"/>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

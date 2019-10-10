@@ -1,0 +1,52 @@
+<View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="task.Task2SAPUI5.controller.oDataExample">
+	<App>
+		<pages>
+			<Page title="{i18n>Table.title}"
+			      showNavButton="true"
+				  navButtonPress="onNavBack">
+				<content>
+					<Table noDataText="Drop column list items here and columns in the area above" id="dataProductTable" items="{localModel>/}">
+						<columns>
+							<Column id="colId" hAlign="Center">
+								<header>
+									<Label text="ProducrID" id="lHeaderProductId" />
+								</header>
+							</Column>
+							<Column id="colProductName" hAlign="Center">
+								<header>
+									<Label text="Name" id="lHeaderProductName" />
+								</header>
+							</Column>
+                            <Column id="colProductDescription" hAlign="Center">
+							    <header>
+							        <Label text="Description" id="lHeaderProductDescription"/>
+							    </header>
+							</Column>
+                            <Column id="colProductPrice" hAlign="Center">
+							    <header>
+							        <Label text="Price" id="lHeaderProductPrice"/>
+							    </header>
+							</Column>
+                             <Column id="colProductReleaseDate" hAlign="Center">
+							    <header>
+							        <Label text="ReleaseDate" id="lHeaderProductReleaseDate"/>
+							    </header>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Active" id="tableItem" press="navToSupplierView">
+								<cells>
+									<Text text="{localModel>ID}" id="textId" />
+									<Text text="{localModel>Name}" id="textName" />
+                                    <ObjectIdentifier title="{localModel>Description}" text="Rating: {localModel>Rating}"/>
+                                    <Text text="{localModel>Price}" id="textPrice" />
+                                    <Text text="{localModel>ReleaseDate}" id="textReleaseDate" />
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</View>

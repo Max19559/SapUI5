@@ -1,0 +1,184 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "task.Task2SAPUI5",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "2.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "task.Task2SAPUI5.view.View1",
+			"type": "XML",
+			"async": true,
+			"id": "View1"
+		},
+		"dependencies": {
+			"minUI5Version": "1.67.0",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "task.Task2SAPUI5.i18n.i18n"
+				}
+			},
+			"Employee":{
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/Employee.json"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "task.Task2SAPUI5.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "Inputs",
+					"pattern": "Inputs",
+					"view": "Inputs",
+					"controlAggregation": "pages",
+					"controlId": "app"
+				},
+				{
+					"name": "Table",
+					"view": "Table",
+					"pattern": "Table",
+					"controlAggregation": "pages",
+					"controlId": "app"
+				},
+				{
+					"name": "View1",
+					"view": "View1",
+					"pattern": "",
+					"controlAggregation": "pages",
+					"controlId": "app"
+				},
+				{
+					"pattern": "Example",
+					"name": "Example",
+					"target": "Example"
+					
+				},
+				{
+					"pattern": "Example.{id}",
+					"name": "Worker",
+					"target": "Worker"
+					
+				},
+				{
+					"pattern": "oDataExample",
+					"name": "oDataExample",
+					"target": "oDataExample"
+					
+				},
+				{
+					"pattern": "oDataExample.{id}",
+					"name": "Supplier",
+					"target": "Supplier"
+					
+				},
+				{
+					"pattern": "MyoData",
+					"name": "MyoData",
+					"target": "MyoData"
+					
+				}
+
+			],
+			"targets": {
+				"TargetView1": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "View1",
+					"viewName": "View1"
+				},
+				"View1": {
+					"viewType": "XML",
+					"viewName": "View1"
+				},
+				"Inputs": {
+					"viewType": "XML",
+					"viewName": "Inputs"
+				},
+				"Table": {
+					"viewType": "XML",
+					"viewName": "Table"
+				},
+				"Worker":{
+					"viewType": "XML",
+					"viewName": "Worker",
+					"viewLevel" : 2,
+					"transition": "flip"
+				},
+				"Example":{
+					"viewType": "XML",
+					"viewName": "Example",
+					"viewLevel" : 1
+				},
+				"oDataExample":{
+					"viewType": "XML",
+					"viewName": "oDataExample",
+					"viewLevel" : 1
+				},
+				"Supplier":{
+					"viewType": "XML",
+					"viewName": "Supplier",
+					"viewLevel" : 2
+				},
+				"MyoData":{
+					"viewType": "XML",
+					"viewName": "MyoData"
+				}
+			}
+		}
+	}
+}

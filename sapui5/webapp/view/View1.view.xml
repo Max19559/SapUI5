@@ -1,0 +1,41 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="task.Task2SAPUI5.controller.View1" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+		<SplitContainer id="SplitContDemo" initialMaster="master">
+		<masterPages>
+			<Page id="master" title="Menu" icon="sap-icon://action" class="sapUiStdPage">
+				<content>
+					<List>
+						<items>
+							<StandardListItem title="{i18n>btnTextNavToInputs}" type="Navigation" press="navToInputs"/>
+							<StandardListItem title="{i18n>btnTextNavToTable}" type="Navigation" press="navToTable"/>
+							<StandardListItem title="{i18n>btnExample}" type="Navigation" press="navToExample"/>
+							<StandardListItem title="{i18n>btnODataExample}" type="Navigation" press="navToODataExample"/>
+							<StandardListItem title="{i18n>btnMyoData}" type="Navigation" press="navToMyoData"/>
+						</items>
+					</List>
+				</content>
+			</Page>
+		</masterPages>
+		<detailPages>
+		<Page id="page" class="MyTitle" title="{i18n>View1.title}">
+					<content>
+					    <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout" id="form3">
+					        <sap.ui.layout.form:content><sap.ui.core:Title text="{i18n>formTxtTitle}" id="title1"/>
+					            <Label text="{i18n>formTxtName}" width="100%" id="lname"/>
+					            <Input value="Maksim" id="iname"/>
+					            <Label text="{i18n>formTxtAge}" width="100%" id="lage"/>
+					            <Input width="100%" id="iage" value="22"/>
+					            <Label text="{i18n>formTxtCategory}" id="lcategory"/>
+								<Input width="100%" id="icategory" value="2"/>
+					            <Button text="{i18n>btnDataSubmit}" id="button0" type="Accept" icon="sap-icon://add" tooltip="See data in other address" press="createWorkerObject"/></sap.ui.layout.form:content>
+					    </sap.ui.layout.form:SimpleForm>
+					</content>
+				</Page></detailPages>
+		</SplitContainer>
+		</App>
+	</Shell>
+</mvc:View>
+
+
+	

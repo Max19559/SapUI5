@@ -1,0 +1,51 @@
+<mvc:View
+	controllerName="task.Task2SAPUI5.controller.Supplier"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield"
+	xmlns:f="sap.ui.layout.form"
+	busyIndicatorDelay="0">
+	<Page
+		title="{i18n>Supplier.title}"
+		class="sapUiResponsiveContentPadding">
+		<content>
+			<Panel
+				width="auto"
+				class="sapUiNoContentPadding">
+				<headerToolbar editTogglable="true">
+					<Toolbar>
+						<Title text="{i18n>titleID} {modelSupplier>ID}" level="H2"/>
+                    </Toolbar>
+				</headerToolbar>
+				<content>
+					<f:SimpleForm
+						editable="false"
+						layout="ResponsiveGridLayout"
+						labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+						columnsL="1" columnsM="1">
+						<f:content>
+							<Label text="{i18n>labelSName}"/>
+							<Input width="100%" id="iSupplierName" value="{modelSupplier>Name}" editable="false"/>
+							<Label text="{i18n>labelSStreet}"/>
+							<Input width="100%" id="iSupplierStreet" value="{modelSupplier>Address/Street}" editable="false"/>
+							<Label text="{i18n>labelSCity}"/>
+							<Input width="100%" id="iSupplierCity" value="{modelSupplier>Address/City}" editable="false"/>
+							<Label text="{i18n>labelSState}"/>
+							<Input width="100%" id="iSupplierState" value="{modelSupplier>Address/State}" editable="false"/>
+                            <Label text="{i18n>labelSZipCode}"/>
+							<Input width="100%" id="iSupplierZipCode" value="{modelSupplier>Address/ZipCode}" editable="false"/>
+                            <Label text="{i18n>labelSCountry}"/>
+							<Input width="100%" id="iSupplierCountry" value="{modelSupplier>Address/Country}" editable="false"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+                <Button
+						text="{i18n>btnNavToBack}" 
+						id="btnNavBackToTable"
+						icon="sap-icon://navigation-left-arrow" 
+						press="onNavBack"/>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,25 @@
+/* Enter your custom styles here */
+.sapMBarPH{
+	background: rgba(2, 181, 252,0.2);
+}
+
+.sapMLabel{
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.sapMInputBaseInner:focus{
+	background: rgba(0, 250, 133, 0.1);
+}
+
+.sapUiFormTitle{
+	font-size: 20px;
+}
+
+.sapMListTblHeader>.sapMTableTH{
+	background: rgb(53, 74, 95);
+}
+
+.sapMListTblHeaderCell span {
+	color: #d1e8ff !important;
+}

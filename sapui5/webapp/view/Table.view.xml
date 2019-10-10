@@ -1,0 +1,73 @@
+<View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="task.Task2SAPUI5.controller.Table">
+	<App>
+		<pages>
+			<Page title="{i18n>Table.title}">
+				<content>
+					<Button
+						text="{i18n>btnTextNavToInputs}" 
+						id="btnNavToInputs" 
+						press="navToInputs" 
+						icon="sap-icon://navigation-left-arrow" />
+					<Button 
+					    text="{i18n>btnTextNavToMain}" 
+						id="btnNavToMain" 
+						press="navToMain" 
+						icon="sap-icon://navigation-right-arrow" 
+						iconFirst="false" />
+					<Button
+						text="" 
+						id="btnDelete" 
+						type="Reject"
+						icon="sap-icon://delete" 
+						press="onDelete"/>
+					<SearchField id="searchField" search="onSearchEmployeesTable" width="50%"/>
+					<Table noDataText="Drop column list items here and columns in the area above" mode="MultiSelect"  id="dataTable" items="{data>/}">
+						<headerToolbar>
+							<OverflowToolbar>
+								<Title text="Workers" level="H2"/>
+								<ToolbarSpacer></ToolbarSpacer>
+								<Button	icon="sap-icon://download" press="onDataExport" />
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column id="colName" hAlign="Center">
+								<header>
+									<Label text="{i18n>tableHeaderTxtName}" id="lHeaderName" />
+								</header>
+							</Column>
+							<Column id="colAge" hAlign="Center">
+								<header>
+									<Label text="{i18n>tableHeaderTxtAge}" id="lHeaderAge" />
+								</header>
+							</Column>
+							<Column id="colCategory" hAlign="Center">
+								<header>
+									<Label text="{i18n>tableHeaderTxtCategory}" id="lHeaderCategory" />
+								</header>
+							</Column>
+							<!--
+							<Column id="column3" hAlign="Center">
+							<header>
+							<Label text="Category" id="label3"/>
+							</header>
+							</Column>
+							-->
+						</columns>
+						<items>
+							<ColumnListItem type="Active" id="tableItem" press=".onListItemPressed">
+								<cells>
+									<Text text="{data>name}" id="text2" />
+									<Text text="{data>age}" id="text3" />
+									<Text text="{data>category}" id="text4" />
+									<!-- <ObjectIdentifier title="{data>name}" text="{data>category}"/> -->
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<NavContainer id="container0">
+					</NavContainer>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</View>
